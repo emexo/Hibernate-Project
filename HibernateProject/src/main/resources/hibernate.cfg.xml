@@ -13,12 +13,8 @@
     <property name="show_sql">true</property>
     <property name="hbm2ddl.auto">update</property>
     
-    <mapping class="com.emexo.hibernate.onetoone.foreignkey.Book"/>
-    <mapping class="com.emexo.hibernate.onetoone.foreignkey.Author"/>
-    <mapping class="com.emexo.hibernate.onetoone.primarykey.Product"/>
-    <mapping class="com.emexo.hibernate.onetoone.primarykey.ProductDetail"/>
-    <mapping class="com.emexo.hibernate.onetoone.jointable.Article"/>
-    <mapping class="com.emexo.hibernate.onetoone.jointable.Category"/>
+    <mapping class="com.emexo.hibernate.manytomanymapping.User"/>
+    <mapping class="com.emexo.hibernate.manytomanymapping.Group"/>
 
   </session-factory>
 </hibernate-configuration>

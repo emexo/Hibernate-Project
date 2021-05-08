@@ -26,6 +26,7 @@ public class ArticlesManager {
 		Session session = sessionFactory.openSession();
 		session.beginTransaction();
 
+
 		Category category = new Category("Hibernate Framework");
 
 		Article articleOne = new Article("One-to-One Mapping",

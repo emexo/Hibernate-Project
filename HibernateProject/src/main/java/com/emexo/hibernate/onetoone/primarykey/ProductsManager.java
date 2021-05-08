@@ -10,7 +10,7 @@ import org.hibernate.service.ServiceRegistryBuilder;
 
 public class ProductsManager {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		// loads configuration and mappings
 		Configuration configuration = new Configuration().configure();
 		ServiceRegistryBuilder registry = new ServiceRegistryBuilder();
@@ -61,7 +61,7 @@ public class ProductsManager {
 			
 			System.out.println(info);
 		}
-		
+		Thread.sleep(60000);
 		session.getTransaction().commit();
 		session.close();
 	}

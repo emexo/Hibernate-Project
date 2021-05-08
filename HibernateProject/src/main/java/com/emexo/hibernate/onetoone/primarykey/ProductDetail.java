@@ -7,83 +7,33 @@ import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import lombok.Data;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Parameter;
-
+@Data
 @Entity
 @Table(name = "PRODUCT_DETAIL")
 public class ProductDetail {
-	private long productId;
-	private String partNumber;
-	private String dimension;
-	private float weight;
-	private String manufacturer;
-	private String origin;
-	private Product product;
-	
-	public ProductDetail() {
-	}
-	
 	@Id
 	@GeneratedValue(generator = "foreigngen")
 	@GenericGenerator(strategy = "foreign", name="foreigngen",
 			parameters = @Parameter(name = "property", value="product"))
 	@Column(name = "PRODUCT_ID")
-	public long getProductId() {
-		return productId;
-	}
-
-	public void setProductId(long productId) {
-		this.productId = productId;
-	}
+	private long productId;
 
 	@Column(name = "PART_NUMBER")
-	public String getPartNumber() {
-		return partNumber;
-	}
+	private String partNumber;
 
-	public void setPartNumber(String partNumber) {
-		this.partNumber = partNumber;
-	}
+	private String dimension;
 
-	public String getDimension() {
-		return dimension;
-	}
+	private float weight;
 
-	public void setDimension(String dimension) {
-		this.dimension = dimension;
-	}
+	private String manufacturer;
 
-	public float getWeight() {
-		return weight;
-	}
-
-	public void setWeight(float weight) {
-		this.weight = weight;
-	}
-
-	public String getManufacturer() {
-		return manufacturer;
-	}
-
-	public void setManufacturer(String manufacturer) {
-		this.manufacturer = manufacturer;
-	}
-
-	public String getOrigin() {
-		return origin;
-	}
-
-	public void setOrigin(String origin) {
-		this.origin = origin;
-	}
+	private String origin;
 
 	@OneToOne(mappedBy = "productDetail")
-	public Product getProduct() {
-		return product;
-	}
+	private Product product;
+	
 
-	public void setProduct(Product product) {
-		this.product = product;
-	}
 }

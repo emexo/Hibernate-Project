@@ -9,7 +9,13 @@ import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 import org.hibernate.service.ServiceRegistryBuilder;
 
-
+/**
+ * 
+ * This program demonstrates using JPA annotations in Hibernate
+ * in order to implement a one-to-many association mapping.
+ * @author www.codejava.net
+ *
+ */
 public class StockManager {
 
 	public static void main(String[] args) {
